@@ -108,7 +108,7 @@ function calculateTemperature(temp) {
 function putWeatherInformation(response) {
   let temp = calculateTemperature(response.main.temp);
   let cName = response.name + "," + response.sys.country;
-  let weatherDescription = response.weather[0].description;
+  // let weatherDescription = response.weather[0].description;
 
   h1.innerHTML = temp;
   h5.innerHTML = cName;
@@ -122,19 +122,19 @@ function putWeatherInformation(response) {
 
 function getImageUrl(id) {
   if (id / 100 == 2) {
-    return "/img/thunder storm.png";
+    return "/assets/img/thunder storm.png";
   } else if (id / 100 == 3 || (id >= 520 && id <= 531)) {
-    return "/img/drizzle.png";
+    return "/assets/img/drizzle.png";
   } else if (id >= 500 && id <= 504) {
-    return "/img/rain.png";
+    return "/assets/img/rain.png";
   } else if (id == 504 || (id >= 600 && id <= 622)) {
-    return "/img/snow.png";
+    return "/assets/img/snow.png";
   } else if (id >= 701 && id <= 781) {
-    return "/img/mist.png";
+    return "/assets/img/mist.png";
   } else if (id == 801 || id == 803 || id == 804) {
-    return "/img/broken clouds.png";
+    return "/assets/img/broken clouds.png";
   } else {
-    return "/img/scattered clouds.png";
+    return "/assets/img/scattered clouds.png";
   }
 }
 
